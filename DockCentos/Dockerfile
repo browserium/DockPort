@@ -22,6 +22,8 @@ WORKDIR opt
 ADD https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm /root/google-chrome-stable_current_x86_64.rpm
 RUN yum -y install /root/google-chrome-stable_current_x86_64.rpm; yum clean all
 
+RUN cd ..
+
 # Install firefox
 RUN yum -y install firefox
 
