@@ -1,6 +1,6 @@
-MAINTAINER corefinder89 "soumyajit.basu62@gmail.com"
-
 FROM centos:latest
+
+MAINTAINER corefinder89 "soumyajit.basu62@gmail.com"
 
 # Execute to install python dependencies and set up the container
 RUN yum install -y epel-release \
@@ -14,7 +14,6 @@ RUN yum install -y epel-release \
         python-devel \
         python-pip \
         python-wheel \
-        google-cloud-sdk \
         python-setuptools && \
     yum upgrade -y python-setuptools
 
@@ -27,8 +26,8 @@ RUN yum -y install /root/google-chrome-stable_current_x86_64.rpm; yum clean all
 RUN yum -y install firefox
 
 # Run the pip configurations
-RUN pip install --upgrade pip && \
-    pip install docutils && \
+RUN pip install --upgrade pip \
+                docutils
 
 # Install module browserium
 RUN pip install browserium==1.2.2
